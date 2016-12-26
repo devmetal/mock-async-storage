@@ -1,0 +1,8 @@
+{
+  "presets":["node6"],
+  "plugins": [
+    "transform-flow-strip-types",
+    "transform-async-to-generator",
+    "transform-object-rest-spread"
+  ]
+}
