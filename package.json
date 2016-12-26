@@ -77,7 +77,9 @@
     "deepmerge": "^1.3.1"
   },
   "maintainers": [],
-  "contributors": [],
+  "contributors": [
+    "Metál Ádám <devmetal91@gmail.com> (https://github.com/devmetal)"
+  ],
   "bugs": {
     "url": "https://github.com/devmetal/mock-async-storage/issues"
   }
