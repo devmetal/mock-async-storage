@@ -41,7 +41,6 @@ Its a mock of react-native AsyncStorage for jest tests
 
 <h1>Usage</h1>
 
-<p>
 In your test codes:
 
 ```JavaScript
@@ -56,4 +55,3 @@ mockStorage.mock();
 // For unmock
 mockStorage.release();
 ```
-</p>
