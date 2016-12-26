@@ -38,3 +38,22 @@ Its a mock of react-native AsyncStorage for jest tests
 <p>Older environments may need <a href="https://babeljs.io/docs/usage/polyfill/" title="A polyfill that emulates missing ECMAScript environment features">Babel's Polyfill</a> or something similar.</p>
 
 <!-- /INSTALL -->
+
+<h1>Usage</h1>
+
+<p>
+In your test codes:
+
+```JavaScript
+const mockStorage = require('mock-async-storage');
+// or import { mock, release } from 'mock-async-storage/src';
+// mock();
+// release();
+
+// For mock AsyncStorage
+mockStorage.mock();
+
+// For unmock
+mockStorage.release();
+```
+</p>
