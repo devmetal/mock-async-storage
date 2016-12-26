@@ -124,10 +124,11 @@ class AsyncStorageMock extends AsyncDict<string, string> {
   }
 }
 
-// Activate the jest mock, TODO
-export const mock = () => {};
+export const mock = () => {
+  const mockImpl = new AsyncStorageMock();
+  jest.mock('AsyncStorage', () => mockImpl);
+};
 
-// Reset the mock
-export const release = () => {};
+export const release = () => jest.unmock('AsyncStorage');
 
 export default AsyncStorageMock;
