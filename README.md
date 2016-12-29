@@ -11,6 +11,7 @@
 
 <!-- /BADGES -->
 
+
 [![Standard - JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
 
@@ -40,6 +41,7 @@ Its a mock of react-native AsyncStorage for jest tests
 <p>Older environments may need <a href="https://babeljs.io/docs/usage/polyfill/" title="A polyfill that emulates missing ECMAScript environment features">Babel's Polyfill</a> or something similar.</p>
 
 <!-- /INSTALL -->
+
 
 <h1>Usage</h1>
 
