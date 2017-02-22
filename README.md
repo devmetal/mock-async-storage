@@ -49,7 +49,7 @@ In your test codes:
 
 ```JavaScript
 const mockStorage = require('mock-async-storage');
-// or import { mock, release } from 'mock-async-storage/src';
+// or import { mock, release } from 'mock-async-storage';
 // mock();
 // release();
 
