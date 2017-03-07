@@ -53,7 +53,8 @@
     "test": "npm run lint && npm run test:src",
     "build": "babel src --out-dir lib --ignore spec.js",
     "projectz": "projectz compile",
-    "compile": "npm run lint && npm run build && npm run projectz"
+    "compile": "npm run lint && npm run build && npm run projectz",
+    "prepublish": "npm run build"
   },
   "engines": {
     "node": ">=6.9.1"
