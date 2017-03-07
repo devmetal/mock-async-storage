@@ -83,7 +83,9 @@
   },
   "maintainers": [],
   "contributors": [
-    "Metál Ádám <devmetal91@gmail.com> (https://github.com/devmetal)"
+    "Metál Ádám <devmetal91@gmail.com> (https://github.com/devmetal)",
+    "Alexis Mangin (http://www.alexismangin.com/)",
+    "Kees Kluskens (http://webduck.nl)"
   ],
   "bugs": {
     "url": "https://github.com/devmetal/mock-async-storage/issues"
