@@ -1,8 +1,3 @@
-import AsyncStorageMock, { mock, release } from './mockAsyncStorage'
+import AsyncStorageMock from './mockAsyncStorage'
 
 export default AsyncStorageMock
-
-export {
-  mock,
-  release
-}
