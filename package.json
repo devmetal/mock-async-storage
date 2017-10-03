@@ -1,7 +1,7 @@
 {
   "name": "mock-async-storage",
   "title": "Jest Mock AsyncStorage for react-native",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "Its a mock of react-native AsyncStorage for jest tests",
   "main": "lib/index.js",
   "keywords": [
