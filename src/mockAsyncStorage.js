@@ -1,6 +1,6 @@
 // @flow
 
-/* global jest Iterable */
+/* global Iterable */
 
 import merge from 'deepmerge'
 
@@ -123,12 +123,5 @@ class AsyncStorageMock extends AsyncDict<string, string> {
     return Promise.resolve()
   }
 }
-
-export const mock = () => {
-  const mockImpl = new AsyncStorageMock()
-  jest.mock('AsyncStorage', () => mockImpl)
-}
-
-export const release = () => jest.unmock('AsyncStorage')
 
 export default AsyncStorageMock

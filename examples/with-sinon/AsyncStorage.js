@@ -1,0 +1,1 @@
+export default { getItem: () => {}, setItem: () => {} };
