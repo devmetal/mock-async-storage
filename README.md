@@ -42,8 +42,85 @@ Its a mock of react-native AsyncStorage for jest tests
 
 <!-- /INSTALL -->
 
+<h1>mock-async-storage@next</h1>
 
-<h1>Usage</h1>
+<h2>Whats the main difference?</h2>
+
+<p>
+I removed the jest specific part from the mock lib. In the next version
+the mocking method is not predefined. You can use any kind of library (sinon) for use this mock.
+</p>
+
+<h2>Usage</h2>
+
+<h3>Manual mocks</h3>
+
+<p>
+I suggest to use jest manual mocks <a href="https://facebook.github.io/jest/docs/en/manual-mocks.html">
+Jest Manual Mocks
+</a>
+For demonstrate this solution you can find an example in examples folder.
+<p>
+
+<h3>Another mocking solution</h3>
+
+```JavaScript
+const MockAsyncStorage = require('mock-async-storage');
+// or import { mock, release } from 'mock-async-storage';
+// mock();
+// release();
+
+const mock = () => {
+  const mockImpl = new MockAsyncStorage()
+  jest.mock('AsyncStorage', () => mockImpl)
+}
+
+const release = () => jest.unmock('AsyncStorage')
+
+mock();
+
+// For unmock
+mockStorage.release();
+```
+
+Working example:
+
+```JavaScript
+import 'react-native';
+import MockAsyncStorage from 'mock-async-storage'
+import React from 'react';
+import Index from '../index.android.js';
+
+// Note: test renderer must be required after react-native.
+import renderer from 'react-test-renderer';
+
+const mock = () => {
+  const mockImpl = new MockAsyncStorage()
+  jest.mock('AsyncStorage', () => mockImpl)
+}
+
+mock();
+
+import { AsyncStorage as storage } from 'react-native'
+
+it('renders correctly', () => {
+  const tree = renderer.create(
+    <Index />
+  );
+});
+
+it('Mock Async Storage working', async () => {
+  await storage.setItem('myKey', 'myValue')
+  const value = await storage.getItem('myKey')
+  expect(value).toBe('myValue')
+})
+```
+
+<h1>mock-async-storage</h1>
+
+<p>This is for the current verison</p>
+
+<h2>Usage</h2>
 
 In your test codes:
 
