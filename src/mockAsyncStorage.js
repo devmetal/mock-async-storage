@@ -122,6 +122,8 @@ class AsyncStorageMock extends AsyncDict<string, string> {
     if (cb) cb(null)
     return Promise.resolve()
   }
+
+  flushGetRequests () {}
 }
 
 export default AsyncStorageMock
