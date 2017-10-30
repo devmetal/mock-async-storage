@@ -42,7 +42,8 @@ Its a mock of react-native AsyncStorage for jest tests
 
 <!-- /INSTALL -->
 
-<h1>mock-async-storage@beta</h1>
+
+<h1>mock-async-storage@2.x.x</h1>
 
 <h2>Whats the main difference?</h2>
 
@@ -116,9 +117,7 @@ it('Mock Async Storage working', async () => {
 })
 ```
 
-<h1>mock-async-storage</h1>
-
-<p>This is for the current verison</p>
+<h1>mock-async-storage@1.x.x</h1>
 
 <h2>Usage</h2>
 

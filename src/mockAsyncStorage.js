@@ -85,7 +85,7 @@ class AsyncDict<K, V> {
   }
 }
 
-class AsyncStorageMock extends AsyncDict<string, string> {
+class MockAsyncStorage extends AsyncDict<string, string> {
   async mergeItem (key: string, value: string, cb: ?ErrBack<string>): Promise<> {
     const item: ?string = await this.getItem(key)
 
@@ -122,6 +122,8 @@ class AsyncStorageMock extends AsyncDict<string, string> {
     if (cb) cb(null)
     return Promise.resolve()
   }
+
+  flushGetRequests () {}
 }
 
-export default AsyncStorageMock
+export default MockAsyncStorage
