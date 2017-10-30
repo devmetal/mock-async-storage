@@ -1,8 +1,8 @@
 /* eslint-env jest */
 
-import AsyncStorageMock from '../index'
+import MockAsyncStorage from '../index'
 
-const storage = new AsyncStorageMock()
+const storage = new MockAsyncStorage()
 
 describe('Async Storage Tests', () => {
   it('#setItem', async () => {
