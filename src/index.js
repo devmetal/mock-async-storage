@@ -1,3 +1,3 @@
-import AsyncStorageMock from './mockAsyncStorage'
+import MockAsyncStorage from './mockAsyncStorage'
 
-export default AsyncStorageMock
+export default MockAsyncStorage
