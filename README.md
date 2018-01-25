@@ -66,7 +66,7 @@ For demonstrate this solution you can find an example in examples folder.
 <h3>Another mocking solution</h3>
 
 ```JavaScript
-const MockAsyncStorage = require('mock-async-storage');
+import MockAsyncStorage from 'mock-async-storage';
 // or import { mock, release } from 'mock-async-storage';
 // mock();
 // release();
