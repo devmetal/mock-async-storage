@@ -1,7 +1,7 @@
 {
   "name": "mock-async-storage",
   "title": "Jest Mock AsyncStorage for react-native",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Its a mock of react-native AsyncStorage for jest tests",
   "main": "lib/index.js",
   "keywords": [
@@ -89,7 +89,8 @@
   "contributors": [
     "Metál Ádám <devmetal91@gmail.com> (https://github.com/devmetal)",
     "Alexis Mangin (http://www.alexismangin.com/)",
-    "Kees Kluskens (http://webduck.nl)"
+    "Kees Kluskens (http://webduck.nl)",
+    "Caleb Gregory (http://caleb-gregory.com)"
   ],
   "bugs": {
     "url": "https://github.com/devmetal/mock-async-storage/issues"
