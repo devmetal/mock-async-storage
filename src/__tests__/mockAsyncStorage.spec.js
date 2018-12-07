@@ -16,6 +16,11 @@ describe('Async Storage Tests', () => {
     expect(foo).toEqual('bar')
   })
 
+  it('#getItem returns null if item not in store', async () => {
+    const foo = await storage.getItem('baz')
+    expect(foo).toEqual(null)
+  })
+
   it('#removeItem', async () => {
     await storage.removeItem('foo')
     const store = storage.getStore()

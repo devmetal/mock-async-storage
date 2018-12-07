@@ -37,7 +37,7 @@ class AsyncDict<K, V> {
   }
 
   async getItem (k: K, cb: ?ErrBack<V>): Promise<?V> {
-    const val = this.store.get(k)
+    const val = this.store.get(k) || null
     if (cb) cb(null, val)
     return val
   }
