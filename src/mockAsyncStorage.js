@@ -64,8 +64,7 @@ class AsyncDict<K, V> {
   }
 
   async multiGet (keys: Array<K>, cb: ?ErrBack<Entries<K, V>>): Promise<Entries<K, V>> {
-    const entries = Array.from(this.store.entries())
-    const requested = entries.filter(([k]) => keys.includes(k))
+    const requested = keys.map(k => [k, this.store.get(k) || null])
     if (cb) cb(null, requested)
     return requested
   }
