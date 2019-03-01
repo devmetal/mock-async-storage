@@ -121,10 +121,10 @@ describe('Async Storage Tests', () => {
 
   it('#multiGet and the callback', async () => {
     const cb = jest.fn()
-    const values = await storage.multiGet(['foo', 'bar'], cb)
+    const values = await storage.multiGet(['foo', 'bar', 'baz'], cb)
 
-    expect(values).toEqual([['foo', 'foo'], ['bar', 'bar']])
-    expect(cb).toBeCalledWith(null, [['foo', 'foo'], ['bar', 'bar']])
+    expect(values).toEqual([['foo', 'foo'], ['bar', 'bar'], ['baz', null]])
+    expect(cb).toBeCalledWith(null, [['foo', 'foo'], ['bar', 'bar'], ['baz', null]])
   })
 
   it('#multiSet and the callback', async () => {
