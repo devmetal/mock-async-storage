@@ -1,8 +1,10 @@
 {
-  "presets":["node6"],
+  "presets": [
+      "@babel/env",
+      "@babel/preset-typescript"
+  ],
   "plugins": [
-    "transform-flow-strip-types",
-    "transform-async-to-generator",
-    "transform-object-rest-spread"
+      "@babel/proposal-class-properties",
+      "@babel/proposal-object-rest-spread"
   ]
 }
