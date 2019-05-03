@@ -1,7 +1,3 @@
-// @flow
-
-/* global Iterable */
-
 import merge from 'deepmerge'
 
 type Entry<K, V> = [K, V];
