@@ -42,6 +42,25 @@ Its a mock of react-native AsyncStorage for jest tests
 
 <!-- /INSTALL -->
 
+<h1>Quick Jest Example</h1>
+
+```JavaScript
+// jest.config.js
+module.exports = {
+  setupFilesAfterEnv: [
+    '<rootDir>/setup-tests.js',
+  ],
+};
+```
+
+```JavaScript
+// setup-tests.js
+import MockAsyncStorage from 'mock-async-storage';
+
+const mockImpl = new MockAsyncStorage();
+jest.mock('@react-native-community/async-storage', () => mockImpl);
+```
+
 
 <h1>mock-async-storage@2.x.x</h1>
 

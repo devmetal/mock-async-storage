@@ -1,6 +1,6 @@
 /* eslint-env jest */
 import sinon from 'sinon';
-import MockAsyncStorage from '../../../src/mockAsyncStorage';
+import MockAsyncStorage from '../../../lib/mockAsyncStorage';
 
 import AsyncStorage from '../AsyncStorage';
 import * as UseStorage from '../UseStorage';

@@ -51,17 +51,17 @@
     "tdd": "jest src/** --watch",
     "lint": "standard src/*.ts src/**/*.ts",
     "test:src": "jest src/**",
-    "test": "npm run lint && npm run test:src && npm run examples",
+    "test": "yarn run tsc && yarn run lint && yarn run test:src && yarn run examples",
     "build": "babel src --out-dir lib --ignore spec.ts --extensions .ts",
     "projectz": "projectz compile",
-    "compile": "npm run lint && npm run build && npm run projectz",
+    "compile": "yarn run lint && yarn run build && yarn run projectz",
     "example-jest": "jest ./examples/with-jest/**",
     "example-sinon": "jest ./examples/with-sinon/**",
-    "examples": "npm run example-jest && npm run example-sinon",
-    "prepublish": "npm run build"
+    "examples": "yarn run example-jest && yarn run example-sinon",
+    "prepublish": "yarn run build"
   },
   "engines": {
-    "node": ">=6.9.1"
+    "node": ">=8.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
@@ -70,7 +70,7 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
     "@babel/preset-typescript": "^7.3.3",
-    "@types/deepmerge": "^2.2.0",
+    "@types/jest": "^24.0.12",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.7.1",
     "jest": "^24.7.1",
