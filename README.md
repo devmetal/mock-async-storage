@@ -28,17 +28,8 @@ Its a mock of react-native AsyncStorage for jest tests
 
 <a href="https://npmjs.com" title="npm is a package manager for javascript"><h3>NPM</h3></a><ul>
 <li>Install: <code>npm install --save mock-async-storage</code></li>
-<li>Module: <code>require('mock-async-storage')</code></li></ul>
-
-<h3><a href="https://github.com/bevry/editions" title="Editions are the best way to produce and consume packages you care about.">Editions</a></h3>
-
-<p>This package is published with the following editions:</p>
-
-<ul><li><code>mock-async-storage/src/index.js</code> is Source + <a href="https://babeljs.io/docs/learn-es2015/" title="ECMAScript Next">ESNext</a> + <a href="https://babeljs.io/docs/learn-es2015/#modules" title="ECMAScript Modules">Import</a> + Flow</li>
-<li><code>mock-async-storage</code> aliases <code>mock-async-storage/lib/index.js</code></li>
-<li><code>mock-async-storage/lib/index.js</code> is <a href="https://babeljs.io" title="The compiler for writing next generation JavaScript">Babel</a> Compiled + <a href="http://babeljs.io/docs/plugins/preset-es2015/" title="ECMAScript 2015">ES2015</a> + <a href="https://nodejs.org/dist/latest-v5.x/docs/api/modules.html" title="Node/CJS Modules">Require</a></li></ul>
-
-<p>Older environments may need <a href="https://babeljs.io/docs/usage/polyfill/" title="A polyfill that emulates missing ECMAScript environment features">Babel's Polyfill</a> or something similar.</p>
+<li>Module: <code>require('mock-async-storage')</code></li>
+<li>Import: <code>import MockAsyncStorage from 'mock-async-storage'</code></li></ul>
 
 <!-- /INSTALL -->
 

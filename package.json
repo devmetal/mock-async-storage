@@ -1,7 +1,7 @@
 {
   "name": "mock-async-storage",
   "title": "Jest Mock AsyncStorage for react-native",
-  "version": "2.0.5",
+  "version": "2.1.0",
   "description": "Its a mock of react-native AsyncStorage for jest tests",
   "main": "lib/index.js",
   "keywords": [
@@ -12,26 +12,21 @@
   ],
   "editions": [
     {
-      "description": "Source + ESNext + Import + Flow",
-      "entry": "src/index.js",
+      "description": "Source + Typescript",
+      "entry": "src/index.ts",
       "syntaxes": [
-        "javascript",
-        "esnext",
-        "import",
-        "arrows",
-        "const",
-        "let",
-        "destructuring",
-        "async"
+        "typescript"
       ]
     },
     {
-      "description": "Babel Compiled + ES2015 + Require",
+      "description": "Babel Compiled + ESNext + Require",
       "entry": "lib/index.js",
       "syntaxes": [
+        "import",
         "javascript",
-        "es2015",
-        "require"
+        "esnext",
+        "require",
+        "async"
       ]
     }
   ],
