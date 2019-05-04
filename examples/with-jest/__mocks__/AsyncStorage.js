@@ -1,3 +1,3 @@
-import MockAsyncStorage from '../../../src/mockAsyncStorage';
+import MockAsyncStorage from '../../../lib/mockAsyncStorage';
 
 export default new MockAsyncStorage();

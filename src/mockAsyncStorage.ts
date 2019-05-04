@@ -1,16 +1,12 @@
-// @flow
-
-/* global Iterable */
-
 import merge from 'deepmerge'
 
-type Entry<K, V> = [K, V];
+export type Entry<K, V> = [K, V | null];
 
-type Entries<K, V> = Iterable<Entry<K, V>>;
+export type Entries<K, V> = Array<Entry<K, V>>;
 
-type ErrBack<V> = (err: ?Error, val: ?V) => {};
+export type ErrBack<V> = (err: Error | null, val?: V | null) => {};
 
-type ArrErrBack<V> = (err: ?Array<Error>, val: ?V) => {};
+export type ArrErrBack<V> = (err: Array<Error> | null, val?: V) => {};
 
 const isStringified = (str: string): boolean => {
   try {
@@ -22,13 +18,13 @@ const isStringified = (str: string): boolean => {
 }
 
 class AsyncDict<K, V> {
-  store: Map<K, V>;
+  store: Map<K, V | null>;
 
   size (): number {
     return this.store.size
   }
 
-  getStore (): Map<K, V> {
+  getStore (): Map<K, V | null> {
     return new Map(this.store)
   }
 
@@ -36,47 +32,47 @@ class AsyncDict<K, V> {
     this.store = new Map()
   }
 
-  async getItem (k: K, cb: ?ErrBack<V>): Promise<?V> {
+  async getItem (k: K, cb?: ErrBack<V>): Promise<V | null> {
     const val = this.store.get(k) || null
     if (cb) cb(null, val)
     return val
   }
 
-  async setItem (k: K, v: V, cb: ?ErrBack<V>): Promise<> {
+  async setItem (k: K, v: V, cb?: ErrBack<V>): Promise<void> {
     this.store.set(k, v)
     if (cb) cb(null)
   }
 
-  async removeItem (k: K, cb: ?ErrBack<V>): Promise<> {
+  async removeItem (k: K, cb?: ErrBack<V>): Promise<void> {
     this.store.delete(k)
     if (cb) cb(null)
   }
 
-  async clear (cb: ?ErrBack<V>): Promise<> {
+  async clear (cb?: ErrBack<V>): Promise<void> {
     this.store.clear()
     if (cb) cb(null)
   }
 
-  async getAllKeys (cb: ?ErrBack<Array<K>>): Promise<Array<K>> {
+  async getAllKeys (cb?: ErrBack<Array<K>>): Promise<Array<K>> {
     const keys: Array<K> = Array.from(this.store.keys())
     if (cb) cb(null, keys)
     return keys
   }
 
-  async multiGet (keys: Array<K>, cb: ?ErrBack<Entries<K, V>>): Promise<Entries<K, V>> {
-    const requested = keys.map(k => [k, this.store.get(k) || null])
+  async multiGet (keys: Array<K>, cb?: ErrBack<Entries<K, V>>): Promise<Entries<K, V>> {
+    const requested: Entries<K, V> = keys.map(k => [k, this.store.get(k) || null])
     if (cb) cb(null, requested)
     return requested
   }
 
-  async multiSet (entries: Entries<K, V>, cb: ?ErrBack<V>): Promise<> {
+  async multiSet (entries: Entries<K, V>, cb?: ErrBack<V>): Promise<void> {
     for (const [key, value] of entries) {
       this.store.set(key, value)
     }
     if (cb) cb(null)
   }
 
-  async multiRemove (keys: Array<K>, cb: ?ErrBack<V>): Promise<> {
+  async multiRemove (keys: Array<K>, cb?: ErrBack<V>): Promise<void> {
     for (const key of keys) {
       this.store.delete(key)
     }
@@ -85,8 +81,8 @@ class AsyncDict<K, V> {
 }
 
 class MockAsyncStorage extends AsyncDict<string, string> {
-  async mergeItem (key: string, value: string, cb: ?ErrBack<string>): Promise<> {
-    const item: ?string = await this.getItem(key)
+  async mergeItem (key: string, value: string, cb?: ErrBack<string>): Promise<void> {
+    const item: string | null = await this.getItem(key)
 
     if (!item) throw new Error(`No item with ${key} key`)
     if (!isStringified(item)) throw new Error(`Invalid item with ${key} key`)
@@ -101,13 +97,15 @@ class MockAsyncStorage extends AsyncDict<string, string> {
     if (cb) cb(null)
   }
 
-  async multiMerge (entries: Entries<string, string>, cb: ?ArrErrBack<string>): Promise<> {
+  async multiMerge (entries: Entries<string, string>, cb?: ArrErrBack<string>): Promise<void> {
     const errors: Array<Error> = []
     /* eslint no-restricted-syntax: "off" */
     /* eslint no-await-in-loop: "off" */
     for (const [key, value] of entries) {
       try {
-        await this.mergeItem(key, value)
+        if (value) {
+          await this.mergeItem(key, value)
+        }
       } catch (err) {
         errors.push(err)
       }
