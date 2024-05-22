@@ -2,6 +2,12 @@
 
 Its a mock of react-native AsyncStorage for jest tests
 
+<h2>ES modules</h2>
+
+From 2.9.x version, added esmodules support.
+
+I suggest to use this library with **setupFilesAfterEnv** configuration. Its more stable and during my tests its working as expected.
+
 <h2>Install</h2>
 
 <a href="https://npmjs.com" title="npm is a package manager for javascript"><h3>NPM</h3></a><ul>
