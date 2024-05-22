@@ -3,7 +3,7 @@
   "title": "Jest Mock AsyncStorage for react-native",
   "version": "2.2.0",
   "description": "Its a mock of react-native AsyncStorage for jest tests",
-  "main": "lib/index.js",
+  "main": "lib/index.cjs",
   "type": "module",
   "keywords": [
     "jest",
