@@ -28,6 +28,17 @@ const mockImpl = new MockAsyncStorage();
 jest.mock('@react-native-community/async-storage', () => mockImpl);
 ```
 
+<h2>@react-native-async-storage/async-storage</h2>
+
+```JavaScript
+import MockAsyncStorage from "mock-async-storage";
+
+jest.mock(
+  "@react-native-async-storage/async-storage",
+  () => new MockAsyncStorage()
+);
+```
+
 <h1>mock-async-storage@2.x.x</h1>
 
 <h2>Whats the main difference?</h2>
