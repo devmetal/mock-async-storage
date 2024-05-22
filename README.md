@@ -1,37 +1,13 @@
-<!-- TITLE/ -->
-
-<h1>Jest Mock AsyncStorage for react-native</h1>
-
-<!-- /TITLE -->
-
-
-<!-- BADGES/ -->
-
-<span class="badge-travisci"><a href="http://travis-ci.org/devmetal/mock-async-storage" title="Check this project's build status on TravisCI"><img src="https://img.shields.io/travis/devmetal/mock-async-storage/master.svg" alt="Travis CI Build Status" /></a></span>
-
-<!-- /BADGES -->
-
-
-[![Standard - JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
-
-
-<!-- DESCRIPTION/ -->
+<h1>Mock AsyncStorage for react-native</h1>
 
 Its a mock of react-native AsyncStorage for jest tests
-
-<!-- /DESCRIPTION -->
-
-
-<!-- INSTALL/ -->
 
 <h2>Install</h2>
 
 <a href="https://npmjs.com" title="npm is a package manager for javascript"><h3>NPM</h3></a><ul>
-<li>Install: <code>npm install --save mock-async-storage</code></li>
-<li>Module: <code>require('mock-async-storage')</code></li>
-<li>Import: <code>import MockAsyncStorage from 'mock-async-storage'</code></li></ul>
 
-<!-- /INSTALL -->
+<li>Install: <code>npm install --save mock-async-storage</code></li>
+<li>Import: <code>import MockAsyncStorage from 'mock-async-storage'</code></li></ul>
 
 <h1>Quick Jest Example</h1>
 
@@ -51,7 +27,6 @@ import MockAsyncStorage from 'mock-async-storage';
 const mockImpl = new MockAsyncStorage();
 jest.mock('@react-native-community/async-storage', () => mockImpl);
 ```
-
 
 <h1>mock-async-storage@2.x.x</h1>
 

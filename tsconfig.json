@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": { "*": ["types/*"] },
-    "target": "esnext",
+    "target": "ESNext",
     "moduleResolution": "node",
     "allowJs": true,
     "noEmit": true,
